@@ -1,1 +1,1 @@
-# docker-openjdk-jdk
+# docker-openjdk-jre
