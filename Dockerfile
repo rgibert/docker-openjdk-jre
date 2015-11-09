@@ -1,6 +1,7 @@
-FROM gliderlabs/alpine
+FROM debian
 MAINTAINER Richard Gibert <richard@gibert.ca>
-RUN apk-install \
-        bash \
-        openjdk7-jre
-COPY cacerts /usr/lib/jvm/java-1.7-openjdk/jre/lib/security/cacerts
+ENV DEBIAN_FRONTEND="noninteractive"
+RUN \
+    apt-get update && \
+    apt-get install -y openjdk-7-jre-headless && \
+    rm -rf /var/lib/apt/lists/*
